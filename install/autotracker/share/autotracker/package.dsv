@@ -1,0 +1,9 @@
+source;share/autotracker/hook/pythonpath.ps1
+source;share/autotracker/hook/pythonpath.dsv
+source;share/autotracker/hook/pythonpath.sh
+source;share/autotracker/hook/ament_prefix_path.ps1
+source;share/autotracker/hook/ament_prefix_path.dsv
+source;share/autotracker/hook/ament_prefix_path.sh
+source;../../build/autotracker/share/autotracker/hook/pythonpath_develop.ps1
+source;../../build/autotracker/share/autotracker/hook/pythonpath_develop.dsv
+source;../../build/autotracker/share/autotracker/hook/pythonpath_develop.sh

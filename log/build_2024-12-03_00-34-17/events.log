@@ -1,0 +1,89 @@
+[0.000000] (-) TimerEvent: {}
+[0.000892] (px4_msgs) JobQueued: {'identifier': 'px4_msgs', 'dependencies': OrderedDict()}
+[0.001098] (px4_ros_com) JobQueued: {'identifier': 'px4_ros_com', 'dependencies': OrderedDict([('px4_msgs', '/home/akshay/drone_ws/install/px4_msgs')])}
+[0.001121] (px4_msgs) JobStarted: {'identifier': 'px4_msgs'}
+[0.010753] (px4_msgs) JobProgress: {'identifier': 'px4_msgs', 'progress': 'cmake'}
+[0.011501] (px4_msgs) Command: {'cmd': ['/usr/bin/cmake', '/home/akshay/drone_ws/src/px4_msgs', '-DCMAKE_INSTALL_PREFIX=/home/akshay/drone_ws/install/px4_msgs'], 'cwd': '/home/akshay/drone_ws/build/px4_msgs', 'env': OrderedDict([('GJS_DEBUG_TOPICS', 'JS ERROR;JS LOG'), ('LESSOPEN', '| /usr/bin/lesspipe %s'), ('LANGUAGE', 'en_IN:en'), ('USER', 'akshay'), ('XDG_SESSION_TYPE', 'x11'), ('SHLVL', '1'), ('LD_LIBRARY_PATH', '/home/akshay/drone_ws/install/px4_ros_com/lib:/home/akshay/drone_ws/install/px4_msgs/lib:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib'), ('HOME', '/home/akshay'), ('OLDPWD', '/home/akshay'), ('DESKTOP_SESSION', 'ubuntu'), ('GIO_LAUNCHED_DESKTOP_FILE', '/usr/share/applications/terminator.desktop'), ('ROS_PYTHON_VERSION', '3'), ('GNOME_SHELL_SESSION_MODE', 'ubuntu'), ('GTK_MODULES', 'gail:atk-bridge'), ('MANAGERPID', '1664'), ('SYSTEMD_EXEC_PID', '2280'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1000/bus'), ('COLORTERM', 'truecolor'), ('TERMINATOR_DBUS_NAME', 'net.tenshu.Terminator21a9d5db22c73a993ff0b42f64b396873'), ('GIO_LAUNCHED_DESKTOP_FILE_PID', '3150'), ('IM_CONFIG_PHASE', '1'), ('COLCON_PREFIX_PATH', '/home/akshay/drone_ws/install'), ('ROS_DISTRO', 'humble'), ('GTK_IM_MODULE', 'ibus'), ('LOGNAME', 'akshay'), ('JOURNAL_STREAM', '8:21771'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('XDG_SESSION_CLASS', 'user'), ('USERNAME', 'akshay'), ('TERM', 'xterm-256color'), ('GNOME_DESKTOP_SESSION_ID', 'this-is-deprecated'), ('ROS_LOCALHOST_ONLY', '0'), ('WINDOWPATH', '2'), ('PATH', '/opt/ros/humble/bin:/home/akshay/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin'), ('SESSION_MANAGER', 'local/Ak-ROG:@/tmp/.ICE-unix/2257,unix/Ak-ROG:/tmp/.ICE-unix/2257'), ('INVOCATION_ID', '1a93129f071e446a927c4f969ece3ce9'), ('XDG_MENU_PREFIX', 'gnome-'), ('XDG_RUNTIME_DIR', '/run/user/1000'), ('DISPLAY', ':0'), ('TERMINATOR_DBUS_PATH', '/net/tenshu/Terminator2'), ('LANG', 'en_US.UTF-8'), ('XDG_CURRENT_DESKTOP', 'ubuntu:GNOME'), ('IBUS_DISABLE_SNOOPER', '1'), ('XMODIFIERS', '@im=ibus'), ('XDG_SESSION_DESKTOP', 'ubuntu'), ('XAUTHORITY', '/run/user/1000/gdm/Xauthority'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('SSH_AGENT_LAUNCHER', 'gnome-keyring'), ('SSH_AUTH_SOCK', '/run/user/1000/keyring/ssh'), ('AMENT_PREFIX_PATH', '/home/akshay/drone_ws/install/px4_ros_com:/home/akshay/drone_ws/install/px4_msgs:/opt/ros/humble'), ('SHELL', '/bin/bash'), ('TERMINATOR_UUID', 'urn:uuid:f1ae1052-d94e-4da1-826d-35494c00aafd'), ('QT_ACCESSIBILITY', '1'), ('GDMSESSION', 'ubuntu'), ('LESSCLOSE', '/usr/bin/lesspipe %s %s'), ('GPG_AGENT_INFO', '/run/user/1000/gnupg/S.gpg-agent:0:1'), ('GJS_DEBUG_OUTPUT', 'stderr'), ('QT_IM_MODULE', 'ibus'), ('PWD', '/home/akshay/drone_ws/build/px4_msgs'), ('LC_ALL', 'en_US.UTF-8'), ('XDG_CONFIG_DIRS', '/etc/xdg/xdg-ubuntu:/etc/xdg'), ('XDG_DATA_DIRS', '/usr/share/ubuntu:/usr/share/gnome:/home/akshay/.local/share/flatpak/exports/share:/var/lib/flatpak/exports/share:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop'), ('PYTHONPATH', '/home/akshay/drone_ws/install/px4_ros_com/local/lib/python3.10/dist-packages:/home/akshay/drone_ws/install/px4_msgs/local/lib/python3.10/dist-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('COLCON', '1'), ('VTE_VERSION', '6800'), ('CMAKE_PREFIX_PATH', '/home/akshay/drone_ws/install/px4_ros_com:/home/akshay/drone_ws/install/px4_msgs:/opt/ros/humble')]), 'shell': False}
+[0.022698] (px4_msgs) StdoutLine: {'line': b'-- Found ament_cmake: 1.3.10 (/opt/ros/humble/share/ament_cmake/cmake)\n'}
+[0.099301] (-) TimerEvent: {}
+[0.156192] (px4_msgs) StdoutLine: {'line': b'-- Override CMake install command with custom implementation using symlinks instead of copying resources\n'}
+[0.168967] (px4_msgs) StdoutLine: {'line': b'-- Found builtin_interfaces: 1.2.1 (/opt/ros/humble/share/builtin_interfaces/cmake)\n'}
+[0.199428] (-) TimerEvent: {}
+[0.202791] (px4_msgs) StdoutLine: {'line': b'-- Found rosidl_generator_c: 3.1.5 (/opt/ros/humble/share/rosidl_generator_c/cmake)\n'}
+[0.205458] (px4_msgs) StdoutLine: {'line': b'-- Found rosidl_adapter: 3.1.5 (/opt/ros/humble/share/rosidl_adapter/cmake)\n'}
+[0.210871] (px4_msgs) StdoutLine: {'line': b'-- Found rosidl_generator_cpp: 3.1.5 (/opt/ros/humble/share/rosidl_generator_cpp/cmake)\n'}
+[0.220177] (px4_msgs) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c\n'}
+[0.233056] (px4_msgs) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp\n'}
+[0.244822] (px4_msgs) StdoutLine: {'line': b'-- Found rosidl_default_generators: 1.2.0 (/opt/ros/humble/share/rosidl_default_generators/cmake)\n'}
+[0.299531] (-) TimerEvent: {}
+[0.399998] (-) TimerEvent: {}
+[0.500511] (-) TimerEvent: {}
+[0.600908] (-) TimerEvent: {}
+[0.701300] (-) TimerEvent: {}
+[0.801861] (-) TimerEvent: {}
+[0.902387] (-) TimerEvent: {}
+[1.002898] (-) TimerEvent: {}
+[1.103249] (-) TimerEvent: {}
+[1.203655] (-) TimerEvent: {}
+[1.304160] (-) TimerEvent: {}
+[1.404520] (-) TimerEvent: {}
+[1.504863] (-) TimerEvent: {}
+[1.605221] (-) TimerEvent: {}
+[1.705542] (-) TimerEvent: {}
+[1.805902] (-) TimerEvent: {}
+[1.906246] (-) TimerEvent: {}
+[2.006696] (-) TimerEvent: {}
+[2.107171] (-) TimerEvent: {}
+[2.207656] (-) TimerEvent: {}
+[2.236668] (px4_msgs) StdoutLine: {'line': b'-- Found ament_cmake_cppcheck: 0.12.11 (/opt/ros/humble/share/ament_cmake_cppcheck/cmake)\n'}
+[2.237275] (px4_msgs) StdoutLine: {'line': b'-- Found ament_cmake_cpplint: 0.12.11 (/opt/ros/humble/share/ament_cmake_cpplint/cmake)\n'}
+[2.237983] (px4_msgs) StdoutLine: {'line': b'-- Found ament_cmake_uncrustify: 0.12.11 (/opt/ros/humble/share/ament_cmake_uncrustify/cmake)\n'}
+[2.238901] (px4_msgs) StdoutLine: {'line': b'-- Found ament_cmake_ros: 0.10.0 (/opt/ros/humble/share/ament_cmake_ros/cmake)\n'}
+[2.307827] (-) TimerEvent: {}
+[2.408345] (-) TimerEvent: {}
+[2.508651] (-) TimerEvent: {}
+[2.531835] (px4_msgs) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c\n'}
+[2.608788] (-) TimerEvent: {}
+[2.645288] (px4_msgs) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp\n'}
+[2.674765] (px4_msgs) StdoutLine: {'line': b'-- Found python_cmake_module: 0.10.0 (/opt/ros/humble/share/python_cmake_module/cmake)\n'}
+[2.699923] (px4_msgs) StdoutLine: {'line': b'-- Using PYTHON_EXECUTABLE: /usr/bin/python3\n'}
+[2.700213] (px4_msgs) StdoutLine: {'line': b'-- Using PYTHON_INCLUDE_DIRS: /usr/include/python3.10\n'}
+[2.700329] (px4_msgs) StdoutLine: {'line': b'-- Using PYTHON_LIBRARIES: /usr/lib/x86_64-linux-gnu/libpython3.10.so\n'}
+[2.708873] (-) TimerEvent: {}
+[2.809251] (-) TimerEvent: {}
+[2.909968] (-) TimerEvent: {}
+[2.946859] (px4_msgs) StdoutLine: {'line': b'-- Using numpy include directory: /home/akshay/.local/lib/python3.10/site-packages/numpy/core/include\n'}
+[2.954798] (px4_msgs) StdoutLine: {'line': b'-- Found ament_cmake_flake8: 0.12.11 (/opt/ros/humble/share/ament_cmake_flake8/cmake)\n'}
+[2.955693] (px4_msgs) StdoutLine: {'line': b'-- Found ament_cmake_pep257: 0.12.11 (/opt/ros/humble/share/ament_cmake_pep257/cmake)\n'}
+[3.010093] (-) TimerEvent: {}
+[3.034843] (px4_msgs) StdoutLine: {'line': b'-- Configuring done\n'}
+[3.110218] (-) TimerEvent: {}
+[3.210709] (-) TimerEvent: {}
+[3.311153] (-) TimerEvent: {}
+[3.411663] (-) TimerEvent: {}
+[3.512117] (-) TimerEvent: {}
+[3.544336] (px4_msgs) StdoutLine: {'line': b'-- Generating done\n'}
+[3.588529] (px4_msgs) StdoutLine: {'line': b'-- Build files have been written to: /home/akshay/drone_ws/build/px4_msgs\n'}
+[3.612248] (-) TimerEvent: {}
+[3.615379] (px4_msgs) CommandEnded: {'returncode': 0}
+[3.616235] (px4_msgs) JobProgress: {'identifier': 'px4_msgs', 'progress': 'build'}
+[3.617160] (px4_msgs) Command: {'cmd': ['/usr/bin/cmake', '--build', '/home/akshay/drone_ws/build/px4_msgs', '--', '-j16', '-l16'], 'cwd': '/home/akshay/drone_ws/build/px4_msgs', 'env': OrderedDict([('GJS_DEBUG_TOPICS', 'JS ERROR;JS LOG'), ('LESSOPEN', '| /usr/bin/lesspipe %s'), ('LANGUAGE', 'en_IN:en'), ('USER', 'akshay'), ('XDG_SESSION_TYPE', 'x11'), ('SHLVL', '1'), ('LD_LIBRARY_PATH', '/home/akshay/drone_ws/install/px4_ros_com/lib:/home/akshay/drone_ws/install/px4_msgs/lib:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib'), ('HOME', '/home/akshay'), ('OLDPWD', '/home/akshay'), ('DESKTOP_SESSION', 'ubuntu'), ('GIO_LAUNCHED_DESKTOP_FILE', '/usr/share/applications/terminator.desktop'), ('ROS_PYTHON_VERSION', '3'), ('GNOME_SHELL_SESSION_MODE', 'ubuntu'), ('GTK_MODULES', 'gail:atk-bridge'), ('MANAGERPID', '1664'), ('SYSTEMD_EXEC_PID', '2280'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1000/bus'), ('COLORTERM', 'truecolor'), ('TERMINATOR_DBUS_NAME', 'net.tenshu.Terminator21a9d5db22c73a993ff0b42f64b396873'), ('GIO_LAUNCHED_DESKTOP_FILE_PID', '3150'), ('IM_CONFIG_PHASE', '1'), ('COLCON_PREFIX_PATH', '/home/akshay/drone_ws/install'), ('ROS_DISTRO', 'humble'), ('GTK_IM_MODULE', 'ibus'), ('LOGNAME', 'akshay'), ('JOURNAL_STREAM', '8:21771'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('XDG_SESSION_CLASS', 'user'), ('USERNAME', 'akshay'), ('TERM', 'xterm-256color'), ('GNOME_DESKTOP_SESSION_ID', 'this-is-deprecated'), ('ROS_LOCALHOST_ONLY', '0'), ('WINDOWPATH', '2'), ('PATH', '/opt/ros/humble/bin:/home/akshay/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin'), ('SESSION_MANAGER', 'local/Ak-ROG:@/tmp/.ICE-unix/2257,unix/Ak-ROG:/tmp/.ICE-unix/2257'), ('INVOCATION_ID', '1a93129f071e446a927c4f969ece3ce9'), ('XDG_MENU_PREFIX', 'gnome-'), ('XDG_RUNTIME_DIR', '/run/user/1000'), ('DISPLAY', ':0'), ('TERMINATOR_DBUS_PATH', '/net/tenshu/Terminator2'), ('LANG', 'en_US.UTF-8'), ('XDG_CURRENT_DESKTOP', 'ubuntu:GNOME'), ('IBUS_DISABLE_SNOOPER', '1'), ('XMODIFIERS', '@im=ibus'), ('XDG_SESSION_DESKTOP', 'ubuntu'), ('XAUTHORITY', '/run/user/1000/gdm/Xauthority'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('SSH_AGENT_LAUNCHER', 'gnome-keyring'), ('SSH_AUTH_SOCK', '/run/user/1000/keyring/ssh'), ('AMENT_PREFIX_PATH', '/home/akshay/drone_ws/install/px4_ros_com:/home/akshay/drone_ws/install/px4_msgs:/opt/ros/humble'), ('SHELL', '/bin/bash'), ('TERMINATOR_UUID', 'urn:uuid:f1ae1052-d94e-4da1-826d-35494c00aafd'), ('QT_ACCESSIBILITY', '1'), ('GDMSESSION', 'ubuntu'), ('LESSCLOSE', '/usr/bin/lesspipe %s %s'), ('GPG_AGENT_INFO', '/run/user/1000/gnupg/S.gpg-agent:0:1'), ('GJS_DEBUG_OUTPUT', 'stderr'), ('QT_IM_MODULE', 'ibus'), ('PWD', '/home/akshay/drone_ws/build/px4_msgs'), ('LC_ALL', 'en_US.UTF-8'), ('XDG_CONFIG_DIRS', '/etc/xdg/xdg-ubuntu:/etc/xdg'), ('XDG_DATA_DIRS', '/usr/share/ubuntu:/usr/share/gnome:/home/akshay/.local/share/flatpak/exports/share:/var/lib/flatpak/exports/share:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop'), ('PYTHONPATH', '/home/akshay/drone_ws/install/px4_ros_com/local/lib/python3.10/dist-packages:/home/akshay/drone_ws/install/px4_msgs/local/lib/python3.10/dist-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('COLCON', '1'), ('VTE_VERSION', '6800'), ('CMAKE_PREFIX_PATH', '/home/akshay/drone_ws/install/px4_ros_com:/home/akshay/drone_ws/install/px4_msgs:/opt/ros/humble')]), 'shell': False}
+[3.712355] (-) TimerEvent: {}
+[3.812764] (-) TimerEvent: {}
+[3.913166] (-) TimerEvent: {}
+[4.013499] (-) TimerEvent: {}
+[4.114014] (-) TimerEvent: {}
+[4.214332] (-) TimerEvent: {}
+[4.240101] (px4_msgs) StderrLine: {'line': b"failed to create symbolic link '/home/akshay/drone_ws/build/px4_msgs/ament_cmake_python/px4_msgs/px4_msgs' because existing path cannot be removed: Is a directory\n"}
+[4.240394] (px4_msgs) StderrLine: {'line': b'gmake[2]: *** [CMakeFiles/ament_cmake_python_symlink_px4_msgs.dir/build.make:70: CMakeFiles/ament_cmake_python_symlink_px4_msgs] Error 1\n'}
+[4.240583] (px4_msgs) StderrLine: {'line': b'gmake[1]: *** [CMakeFiles/Makefile2:421: CMakeFiles/ament_cmake_python_symlink_px4_msgs.dir/all] Error 2\n'}
+[4.240724] (px4_msgs) StderrLine: {'line': b'gmake[1]: *** Waiting for unfinished jobs....\n'}
+[4.268347] (px4_msgs) StdoutLine: {'line': b'[  0%] Built target px4_msgs__cpp\n'}
+[4.314430] (-) TimerEvent: {}
+[4.385706] (px4_msgs) StdoutLine: {'line': b'[ 12%] Built target px4_msgs__rosidl_generator_c\n'}
+[4.386729] (px4_msgs) StderrLine: {'line': b'gmake: *** [Makefile:146: all] Error 2\n'}
+[4.390069] (px4_msgs) CommandEnded: {'returncode': 2}
+[4.411706] (px4_msgs) JobEnded: {'identifier': 'px4_msgs', 'rc': 2}
+[4.414494] (-) TimerEvent: {}
+[4.422220] (px4_ros_com) JobSkipped: {'identifier': 'px4_ros_com'}
+[4.422274] (-) EventReactorShutdown: {}

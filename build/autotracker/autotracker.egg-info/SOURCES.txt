@@ -1,0 +1,12 @@
+package.xml
+setup.cfg
+setup.py
+autotracker/__init__.py
+autotracker.egg-info/PKG-INFO
+autotracker.egg-info/SOURCES.txt
+autotracker.egg-info/dependency_links.txt
+autotracker.egg-info/entry_points.txt
+autotracker.egg-info/requires.txt
+autotracker.egg-info/top_level.txt
+autotracker.egg-info/zip-safe
+resource/autotracker

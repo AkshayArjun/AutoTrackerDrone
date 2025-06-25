@@ -1,0 +1,4 @@
+Invoking command in '/home/akshay/drone_ws/build/px4_msgs': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake /home/akshay/drone_ws/src/px4_msgs -DCMAKE_INSTALL_PREFIX=/home/akshay/drone_ws/install/px4_msgs
+Invoked command in '/home/akshay/drone_ws/build/px4_msgs' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake /home/akshay/drone_ws/src/px4_msgs -DCMAKE_INSTALL_PREFIX=/home/akshay/drone_ws/install/px4_msgs
+Invoking command in '/home/akshay/drone_ws/build/px4_msgs': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /home/akshay/drone_ws/build/px4_msgs -- -j16 -l16
+Invoked command in '/home/akshay/drone_ws/build/px4_msgs' returned '2': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /home/akshay/drone_ws/build/px4_msgs -- -j16 -l16

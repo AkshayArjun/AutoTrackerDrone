@@ -1,0 +1,113 @@
+[0.035s] Invoking command in '/home/akshay/drone_ws/build/px4_msgs': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake /home/akshay/drone_ws/src/px4_msgs -DAMENT_CMAKE_SYMLINK_INSTALL=1 -DCMAKE_INSTALL_PREFIX=/home/akshay/drone_ws/install/px4_msgs
+[0.052s] -- Found ament_cmake: 1.3.11 (/opt/ros/humble/share/ament_cmake/cmake)
+[0.262s] -- Override CMake install command with custom implementation using symlinks instead of copying resources
+[0.298s] -- Found builtin_interfaces: 1.2.1 (/opt/ros/humble/share/builtin_interfaces/cmake)
+[0.390s] -- Found rosidl_generator_c: 3.1.6 (/opt/ros/humble/share/rosidl_generator_c/cmake)
+[0.400s] -- Found rosidl_adapter: 3.1.6 (/opt/ros/humble/share/rosidl_adapter/cmake)
+[0.423s] -- Found rosidl_generator_cpp: 3.1.6 (/opt/ros/humble/share/rosidl_generator_cpp/cmake)
+[0.457s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[0.505s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[0.548s] -- Found rosidl_default_generators: 1.2.0 (/opt/ros/humble/share/rosidl_default_generators/cmake)
+[3.848s] -- Found ament_cmake_cppcheck: 0.12.12 (/opt/ros/humble/share/ament_cmake_cppcheck/cmake)
+[3.853s] -- Found ament_cmake_cpplint: 0.12.12 (/opt/ros/humble/share/ament_cmake_cpplint/cmake)
+[3.857s] -- Found ament_cmake_uncrustify: 0.12.12 (/opt/ros/humble/share/ament_cmake_uncrustify/cmake)
+[3.862s] -- Found ament_cmake_ros: 0.10.0 (/opt/ros/humble/share/ament_cmake_ros/cmake)
+[4.511s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[4.779s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[4.859s] -- Found python_cmake_module: 0.10.0 (/opt/ros/humble/share/python_cmake_module/cmake)
+[4.926s] -- Using PYTHON_EXECUTABLE: /usr/bin/python3
+[4.926s] -- Using PYTHON_INCLUDE_DIRS: /usr/include/python3.10
+[4.926s] -- Using PYTHON_LIBRARIES: /usr/lib/x86_64-linux-gnu/libpython3.10.so
+[5.189s] -- Using numpy include directory: /home/akshay/.local/lib/python3.10/site-packages/numpy/core/include
+[5.202s] -- Found ament_cmake_flake8: 0.12.12 (/opt/ros/humble/share/ament_cmake_flake8/cmake)
+[5.205s] -- Found ament_cmake_pep257: 0.12.12 (/opt/ros/humble/share/ament_cmake_pep257/cmake)
+[5.372s] -- Configuring done
+[6.218s] -- Generating done
+[6.258s] -- Build files have been written to: /home/akshay/drone_ws/build/px4_msgs
+[6.288s] Invoked command in '/home/akshay/drone_ws/build/px4_msgs' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake /home/akshay/drone_ws/src/px4_msgs -DAMENT_CMAKE_SYMLINK_INSTALL=1 -DCMAKE_INSTALL_PREFIX=/home/akshay/drone_ws/install/px4_msgs
+[6.291s] Invoking command in '/home/akshay/drone_ws/build/px4_msgs': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /home/akshay/drone_ws/build/px4_msgs -- -j16 -l16
+[7.183s] failed to create symbolic link '/home/akshay/drone_ws/build/px4_msgs/ament_cmake_python/px4_msgs/px4_msgs' because existing path cannot be removed: Is a directory
+[7.183s] gmake[2]: *** [CMakeFiles/ament_cmake_python_symlink_px4_msgs.dir/build.make:70: CMakeFiles/ament_cmake_python_symlink_px4_msgs] Error 1
+[7.184s] gmake[1]: *** [CMakeFiles/Makefile2:421: CMakeFiles/ament_cmake_python_symlink_px4_msgs.dir/all] Error 2
+[7.184s] gmake[1]: *** Waiting for unfinished jobs....
+[7.191s] [  0%] [34m[1mGenerating C code for ROS interfaces[0m
+[7.226s] [  0%] [34m[1mGenerating C++ code for ROS interfaces[0m
+[21.758s] Traceback (most recent call last):
+[21.758s]   File "/opt/ros/humble/share/rosidl_generator_c/cmake/../../../lib/rosidl_generator_c/rosidl_generator_c", line 38, in <module>
+[21.758s] Traceback (most recent call last):
+[21.758s]   File "/opt/ros/humble/share/rosidl_generator_cpp/cmake/../../../lib/rosidl_generator_cpp/rosidl_generator_cpp", line 38, in <module>
+[21.758s] gmake[2]: *** Deleting file 'rosidl_generator_c/px4_msgs/msg/action_request.h'
+[21.758s] gmake[2]: *** Deleting file 'rosidl_generator_cpp/px4_msgs/msg/action_request.hpp'
+[21.759s]     sys.exit(main())
+[21.759s]   File "/opt/ros/humble/share/rosidl_generator_c/cmake/../../../lib/rosidl_generator_c/rosidl_generator_c", line 34, in main
+[21.759s]     generate_c(args.generator_arguments_file)
+[21.759s]   File "/opt/ros/humble/local/lib/python3.10/dist-packages/rosidl_generator_c/__init__.py", line 37, in generate_c
+[21.759s]     sys.exit(main())
+[21.759s]   File "/opt/ros/humble/share/rosidl_generator_cpp/cmake/../../../lib/rosidl_generator_cpp/rosidl_generator_cpp", line 34, in main
+[21.759s]     return generate_files(
+[21.759s]   File "/opt/ros/humble/local/lib/python3.10/dist-packages/rosidl_cmake/__init__.py", line 87, in generate_files
+[21.759s]     generate_cpp(args.generator_arguments_file)
+[21.759s]   File "/opt/ros/humble/local/lib/python3.10/dist-packages/rosidl_generator_cpp/__init__.py", line 39, in generate_cpp
+[21.760s]     expand_template(
+[21.760s]   File "/opt/ros/humble/local/lib/python3.10/dist-packages/rosidl_cmake/__init__.py", line 149, in expand_template
+[21.760s]     interpreter.string(template_content, template_path, locals=data)
+[21.760s]     return generate_files(
+[21.760s]   File "/usr/lib/python3/dist-packages/em.py", line 2391, in string
+[21.760s]   File "/opt/ros/humble/local/lib/python3.10/dist-packages/rosidl_cmake/__init__.py", line 87, in generate_files
+[21.760s]     expand_template(
+[21.760s]   File "/opt/ros/humble/local/lib/python3.10/dist-packages/rosidl_cmake/__init__.py", line 149, in expand_template
+[21.760s]     interpreter.string(template_content, template_path, locals=data)
+[21.760s]   File "/usr/lib/python3/dist-packages/em.py", line 2391, in string
+[21.760s]     self.safe(scanner, True, locals)
+[21.760s]     self.safe(scanner, True, locals)
+[21.760s]   File "/usr/lib/python3/dist-packages/em.py", line 2401, in safe
+[21.761s]   File "/usr/lib/python3/dist-packages/em.py", line 2401, in safe
+[21.761s]     self.parse(scanner, locals)
+[21.761s]     self.parse(scanner, locals)
+[21.761s]   File "/usr/lib/python3/dist-packages/em.py", line 2421, in parse
+[21.761s]   File "/usr/lib/python3/dist-packages/em.py", line 2421, in parse
+[21.761s]     token.run(self, locals)
+[21.761s]   File "/usr/lib/python3/dist-packages/em.py", line 1547, in run
+[21.761s]     token.run(self, locals)
+[21.761s]   File "/usr/lib/python3/dist-packages/em.py", line 1515, in run
+[21.761s]     self.subrun(info[0][1], interpreter, locals)
+[21.761s]   File "/usr/lib/python3/dist-packages/em.py", line 1631, in subrun
+[21.761s]     def run(self, interpreter, locals):
+[21.761s] KeyboardInterrupt
+[21.761s]     token.run(interpreter, locals)
+[21.761s]   File "/usr/lib/python3/dist-packages/em.py", line 1425, in run
+[21.761s]     interpreter.execute(self.code, locals)
+[21.761s]   File "/usr/lib/python3/dist-packages/em.py", line 2596, in execute
+[21.762s]     _exec(statements, self.globals, locals)
+[21.762s]   File "<string>", line 2, in <module>
+[21.762s]   File "/opt/ros/humble/local/lib/python3.10/dist-packages/rosidl_cmake/__init__.py", line 198, in _expand_template
+[21.762s]     interpreter.string(content, str(template_path), kwargs)
+[21.762s]   File "/usr/lib/python3/dist-packages/em.py", line 2391, in string
+[21.762s]     self.safe(scanner, True, locals)
+[21.762s]   File "/usr/lib/python3/dist-packages/em.py", line 2401, in safe
+[21.762s]     self.parse(scanner, locals)
+[21.762s]   File "/usr/lib/python3/dist-packages/em.py", line 2417, in parse
+[21.762s]     token = scanner.one()
+[21.762s]   File "/usr/lib/python3/dist-packages/em.py", line 1994, in one
+[21.762s]     self.sync()
+[21.762s] KeyboardInterrupt
+[21.810s] Exception ignored in: <function Interpreter.__del__ at 0x72107d8bbeb0>
+[21.810s] Traceback (most recent call last):
+[21.810s]   File "/usr/lib/python3/dist-packages/em.py", line 2094, in __del__
+[21.810s]   File "/usr/lib/python3/dist-packages/em.py", line 2157, in shutdown
+[21.810s]   File "/usr/lib/python3/dist-packages/em.py", line 2647, in finalize
+[21.810s]   File "/usr/lib/python3/dist-packages/em.py", line 2200, in push
+[21.811s] AttributeError: '_io.TextIOWrapper' object has no attribute 'push'
+[21.811s] Exception ignored in: <function Interpreter.__del__ at 0x76d4865f3c70>
+[21.811s] Traceback (most recent call last):
+[21.811s]   File "/usr/lib/python3/dist-packages/em.py", line 2094, in __del__
+[21.811s]   File "/usr/lib/python3/dist-packages/em.py", line 2157, in shutdown
+[21.811s]   File "/usr/lib/python3/dist-packages/em.py", line 2647, in finalize
+[21.811s]   File "/usr/lib/python3/dist-packages/em.py", line 2200, in push
+[21.812s] AttributeError: '_io.TextIOWrapper' object has no attribute 'push'
+[21.834s] gmake[2]: *** [CMakeFiles/px4_msgs__cpp.dir/build.make:1457: rosidl_generator_cpp/px4_msgs/msg/action_request.hpp] Interrupt
+[21.835s] gmake[1]: *** [CMakeFiles/Makefile2:265: CMakeFiles/px4_msgs__cpp.dir/all] Interrupt
+[21.835s] gmake[2]: *** [CMakeFiles/px4_msgs__rosidl_generator_c.dir/build.make:316: rosidl_generator_c/px4_msgs/msg/action_request.h] Interrupt
+[21.835s] gmake[1]: *** [CMakeFiles/Makefile2:212: CMakeFiles/px4_msgs__rosidl_generator_c.dir/all] Interrupt
+[21.836s] gmake: *** [Makefile:146: all] Interrupt
+[21.841s] Invoked command in '/home/akshay/drone_ws/build/px4_msgs' returned '-2': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /home/akshay/drone_ws/build/px4_msgs -- -j16 -l16

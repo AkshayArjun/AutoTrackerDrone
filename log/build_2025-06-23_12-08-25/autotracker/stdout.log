@@ -1,0 +1,21 @@
+running develop
+running egg_info
+creating autotracker.egg-info
+writing autotracker.egg-info/PKG-INFO
+writing dependency_links to autotracker.egg-info/dependency_links.txt
+writing entry points to autotracker.egg-info/entry_points.txt
+writing requirements to autotracker.egg-info/requires.txt
+writing top-level names to autotracker.egg-info/top_level.txt
+writing manifest file 'autotracker.egg-info/SOURCES.txt'
+reading manifest file 'autotracker.egg-info/SOURCES.txt'
+writing manifest file 'autotracker.egg-info/SOURCES.txt'
+running build_ext
+Creating /home/akshay/drone_ws/install/autotracker/lib/python3.10/site-packages/autotracker.egg-link (link to .)
+
+Installed /home/akshay/drone_ws/build/autotracker
+running symlink_data
+creating /home/akshay/drone_ws/install/autotracker/share/ament_index
+creating /home/akshay/drone_ws/install/autotracker/share/ament_index/resource_index
+creating /home/akshay/drone_ws/install/autotracker/share/ament_index/resource_index/packages
+symbolically linking /home/akshay/drone_ws/build/autotracker/resource/autotracker -> /home/akshay/drone_ws/install/autotracker/share/ament_index/resource_index/packages
+symbolically linking /home/akshay/drone_ws/build/autotracker/package.xml -> /home/akshay/drone_ws/install/autotracker/share/autotracker

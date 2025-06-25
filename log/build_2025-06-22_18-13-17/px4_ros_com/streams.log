@@ -1,0 +1,120 @@
+[0.083s] Invoking command in '/home/akshay/drone_ws/build/px4_ros_com': CMAKE_PREFIX_PATH=/home/akshay/drone_ws/install/px4_msgs:/home/akshay/drone_ws/install/px4_ros_com:/opt/ros/humble LD_LIBRARY_PATH=/home/akshay/drone_ws/install/px4_msgs/lib:/home/akshay/drone_ws/install/px4_ros_com/lib:/usr/local/cuda-12.8/lib64:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib /usr/bin/cmake --build /home/akshay/drone_ws/build/px4_ros_com -- -j16 -l16
+[0.104s] -- Found ament_cmake: 1.3.11 (/opt/ros/humble/share/ament_cmake/cmake)
+[0.188s] -- Found builtin_interfaces: 1.2.1 (/opt/ros/humble/share/builtin_interfaces/cmake)
+[0.210s] -- Found rosidl_generator_c: 3.1.6 (/opt/ros/humble/share/rosidl_generator_c/cmake)
+[0.212s] -- Found rosidl_adapter: 3.1.6 (/opt/ros/humble/share/rosidl_adapter/cmake)
+[0.216s] -- Found rosidl_generator_cpp: 3.1.6 (/opt/ros/humble/share/rosidl_generator_cpp/cmake)
+[0.223s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[0.234s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[0.243s] -- Found eigen3_cmake_module: 0.1.1 (/opt/ros/humble/share/eigen3_cmake_module/cmake)
+[0.246s] -- Found geometry_msgs: 4.8.0 (/opt/ros/humble/share/geometry_msgs/cmake)
+[0.271s] -- Found px4_msgs: 2.0.1 (/home/akshay/drone_ws/install/px4_msgs/share/px4_msgs/cmake)
+[0.282s] -- Found rclcpp: 16.0.12 (/opt/ros/humble/share/rclcpp/cmake)
+[0.313s] -- Found rmw_implementation_cmake: 6.1.2 (/opt/ros/humble/share/rmw_implementation_cmake/cmake)
+[0.315s] -- Found rmw_fastrtps_cpp: 6.2.7 (/opt/ros/humble/share/rmw_fastrtps_cpp/cmake)
+[0.437s] -- Using RMW implementation 'rmw_fastrtps_cpp' as default
+[0.477s] -- Found sensor_msgs: 4.8.0 (/opt/ros/humble/share/sensor_msgs/cmake)
+[0.493s] -- Found rclpy: 3.3.16 (/opt/ros/humble/share/rclpy/cmake)
+[0.500s] -- Found ament_lint_auto: 0.12.12 (/opt/ros/humble/share/ament_lint_auto/cmake)
+[0.564s] -- Added test 'copyright' to check source files copyright and LICENSE
+[0.572s] -- Added test 'cppcheck' to perform static code analysis on C / C++ code
+[0.572s] -- Configured cppcheck include dirs: /home/akshay/drone_ws/src/px4_ros_com/include;$<BUILD_INTERFACE:/home/akshay/drone_ws/src/px4_ros_com/include/px4_ros_com>
+[0.572s] -- Configured cppcheck exclude dirs and/or files: 
+[0.577s] -- Added test 'cpplint' to check C / C++ code against the Google style
+[0.577s] -- Configured cpplint exclude dirs and/or files: 
+[0.578s] -- Added test 'flake8' to check Python code syntax and style conventions
+[0.579s] -- Added test 'lint_cmake' to check CMake code style
+[0.580s] -- Added test 'pep257' to check Python code against some of the docstring style conventions in PEP 257
+[0.585s] -- Added test 'uncrustify' to check C / C++ code style
+[0.585s] -- Configured uncrustify additional arguments: 
+[0.586s] -- Added test 'xmllint' to check XML markup files
+[0.588s] -- Configuring done
+[0.617s] -- Generating done
+[0.626s] -- Build files have been written to: /home/akshay/drone_ws/build/px4_ros_com
+[0.656s] [  0%] Built target ament_cmake_python_copy_px4_ros_com
+[0.659s] [ 33%] [32mBuilding CXX object CMakeFiles/frame_transforms.dir/src/lib/frame_transforms.cpp.o[0m
+[0.660s] [ 33%] [32mBuilding CXX object CMakeFiles/debug_vect_advertiser.dir/src/examples/advertisers/debug_vect_advertiser.cpp.o[0m
+[0.660s] [ 33%] [32mBuilding CXX object CMakeFiles/sensor_combined_listener.dir/src/examples/listeners/sensor_combined_listener.cpp.o[0m
+[0.660s] [ 33%] [32mBuilding CXX object CMakeFiles/offboard_control.dir/src/examples/offboard/offboard_control.cpp.o[0m
+[0.660s] [ 41%] [32mBuilding CXX object CMakeFiles/vehicle_gps_position_listener.dir/src/examples/listeners/vehicle_gps_position_listener.cpp.o[0m
+[0.660s] [ 50%] [32mBuilding CXX object CMakeFiles/offboard_control_srv.dir/src/examples/offboard/offboard_control_srv.cpp.o[0m
+[0.944s] running egg_info
+[0.945s] writing px4_ros_com.egg-info/PKG-INFO
+[0.945s] writing dependency_links to px4_ros_com.egg-info/dependency_links.txt
+[0.945s] writing top-level names to px4_ros_com.egg-info/top_level.txt
+[0.950s] reading manifest file 'px4_ros_com.egg-info/SOURCES.txt'
+[0.951s] writing manifest file 'px4_ros_com.egg-info/SOURCES.txt'
+[0.985s] [ 50%] Built target ament_cmake_python_build_px4_ros_com_egg
+[5.044s] [ 58%] [32m[1mLinking CXX executable debug_vect_advertiser[0m
+[5.259s] [ 58%] Built target debug_vect_advertiser
+[5.763s] [ 66%] [32m[1mLinking CXX executable offboard_control[0m
+[5.961s] [ 66%] Built target offboard_control
+[6.636s] [ 75%] [32m[1mLinking CXX executable offboard_control_srv[0m
+[6.862s] [ 75%] Built target offboard_control_srv
+[7.592s] [ 83%] [32m[1mLinking CXX shared library libframe_transforms.so[0m
+[7.837s] [ 83%] Built target frame_transforms
+[8.568s] [ 91%] [32m[1mLinking CXX executable sensor_combined_listener[0m
+[8.615s] [100%] [32m[1mLinking CXX executable vehicle_gps_position_listener[0m
+[8.862s] [100%] Built target sensor_combined_listener
+[8.911s] [100%] Built target vehicle_gps_position_listener
+[8.918s] Invoked command in '/home/akshay/drone_ws/build/px4_ros_com' returned '0': CMAKE_PREFIX_PATH=/home/akshay/drone_ws/install/px4_msgs:/home/akshay/drone_ws/install/px4_ros_com:/opt/ros/humble LD_LIBRARY_PATH=/home/akshay/drone_ws/install/px4_msgs/lib:/home/akshay/drone_ws/install/px4_ros_com/lib:/usr/local/cuda-12.8/lib64:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib /usr/bin/cmake --build /home/akshay/drone_ws/build/px4_ros_com -- -j16 -l16
+[8.924s] Invoking command in '/home/akshay/drone_ws/build/px4_ros_com': CMAKE_PREFIX_PATH=/home/akshay/drone_ws/install/px4_msgs:/home/akshay/drone_ws/install/px4_ros_com:/opt/ros/humble LD_LIBRARY_PATH=/home/akshay/drone_ws/install/px4_msgs/lib:/home/akshay/drone_ws/install/px4_ros_com/lib:/usr/local/cuda-12.8/lib64:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib /usr/bin/cmake --install /home/akshay/drone_ws/build/px4_ros_com
+[8.927s] -- Install configuration: ""
+[8.928s] -- Installing: /home/akshay/drone_ws/install/px4_ros_com/lib/px4_ros_com/sensor_combined_listener
+[8.932s] -- Set runtime path of "/home/akshay/drone_ws/install/px4_ros_com/lib/px4_ros_com/sensor_combined_listener" to ""
+[8.933s] -- Installing: /home/akshay/drone_ws/install/px4_ros_com/lib/px4_ros_com/vehicle_gps_position_listener
+[8.938s] -- Set runtime path of "/home/akshay/drone_ws/install/px4_ros_com/lib/px4_ros_com/vehicle_gps_position_listener" to ""
+[8.939s] -- Installing: /home/akshay/drone_ws/install/px4_ros_com/lib/px4_ros_com/debug_vect_advertiser
+[8.940s] -- Set runtime path of "/home/akshay/drone_ws/install/px4_ros_com/lib/px4_ros_com/debug_vect_advertiser" to ""
+[8.941s] -- Installing: /home/akshay/drone_ws/install/px4_ros_com/lib/px4_ros_com/offboard_control
+[8.942s] -- Set runtime path of "/home/akshay/drone_ws/install/px4_ros_com/lib/px4_ros_com/offboard_control" to ""
+[8.944s] -- Installing: /home/akshay/drone_ws/install/px4_ros_com/lib/px4_ros_com/offboard_control_srv
+[8.946s] -- Set runtime path of "/home/akshay/drone_ws/install/px4_ros_com/lib/px4_ros_com/offboard_control_srv" to ""
+[8.946s] -- Installing: /home/akshay/drone_ws/install/px4_ros_com/share/px4_ros_com/environment/library_path.sh
+[8.946s] -- Installing: /home/akshay/drone_ws/install/px4_ros_com/share/px4_ros_com/environment/library_path.dsv
+[8.946s] -- Up-to-date: /home/akshay/drone_ws/install/px4_ros_com/include/px4_ros_com
+[8.946s] -- Up-to-date: /home/akshay/drone_ws/install/px4_ros_com/include/px4_ros_com/frame_transforms.h
+[8.947s] -- Installing: /home/akshay/drone_ws/install/px4_ros_com/lib/libframe_transforms.so
+[8.952s] -- Set runtime path of "/home/akshay/drone_ws/install/px4_ros_com/lib/libframe_transforms.so" to ""
+[8.952s] -- Up-to-date: /home/akshay/drone_ws/install/px4_ros_com/share/px4_ros_com//launch
+[8.952s] -- Up-to-date: /home/akshay/drone_ws/install/px4_ros_com/share/px4_ros_com//launch/sensor_combined_listener.launch.py
+[8.952s] -- Up-to-date: /home/akshay/drone_ws/install/px4_ros_com/share/px4_ros_com//launch/offboard_control_launch.yaml
+[8.952s] -- Up-to-date: /home/akshay/drone_ws/install/px4_ros_com/share/px4_ros_com//test
+[8.952s] -- Up-to-date: /home/akshay/drone_ws/install/px4_ros_com/share/px4_ros_com//test/test_input.py
+[8.952s] -- Up-to-date: /home/akshay/drone_ws/install/px4_ros_com/share/px4_ros_com//test/__init__.py
+[8.953s] -- Up-to-date: /home/akshay/drone_ws/install/px4_ros_com/share/px4_ros_com//test/pipeline_io_test.py
+[8.953s] -- Up-to-date: /home/akshay/drone_ws/install/px4_ros_com/share/px4_ros_com//test/test_output.py
+[8.953s] -- Up-to-date: /home/akshay/drone_ws/install/px4_ros_com/share/px4_ros_com/environment/pythonpath.sh
+[8.953s] -- Installing: /home/akshay/drone_ws/install/px4_ros_com/share/px4_ros_com/environment/pythonpath.dsv
+[8.953s] -- Up-to-date: /home/akshay/drone_ws/install/px4_ros_com/local/lib/python3.10/dist-packages/px4_ros_com-0.1.0-py3.10.egg-info
+[8.953s] -- Installing: /home/akshay/drone_ws/install/px4_ros_com/local/lib/python3.10/dist-packages/px4_ros_com-0.1.0-py3.10.egg-info/top_level.txt
+[8.953s] -- Installing: /home/akshay/drone_ws/install/px4_ros_com/local/lib/python3.10/dist-packages/px4_ros_com-0.1.0-py3.10.egg-info/PKG-INFO
+[8.953s] -- Installing: /home/akshay/drone_ws/install/px4_ros_com/local/lib/python3.10/dist-packages/px4_ros_com-0.1.0-py3.10.egg-info/dependency_links.txt
+[8.953s] -- Installing: /home/akshay/drone_ws/install/px4_ros_com/local/lib/python3.10/dist-packages/px4_ros_com-0.1.0-py3.10.egg-info/SOURCES.txt
+[8.953s] -- Up-to-date: /home/akshay/drone_ws/install/px4_ros_com/local/lib/python3.10/dist-packages/px4_ros_com
+[8.953s] -- Up-to-date: /home/akshay/drone_ws/install/px4_ros_com/local/lib/python3.10/dist-packages/px4_ros_com/__init__.py
+[8.953s] -- Up-to-date: /home/akshay/drone_ws/install/px4_ros_com/local/lib/python3.10/dist-packages/px4_ros_com/module_to_import.py
+[8.981s] Listing '/home/akshay/drone_ws/install/px4_ros_com/local/lib/python3.10/dist-packages/px4_ros_com'...
+[8.984s] -- Installing: /home/akshay/drone_ws/install/px4_ros_com/lib/px4_ros_com/offboard_control.py
+[8.985s] -- Up-to-date: /home/akshay/drone_ws/install/px4_ros_com/share/ament_index/resource_index/package_run_dependencies/px4_ros_com
+[8.985s] -- Installing: /home/akshay/drone_ws/install/px4_ros_com/share/ament_index/resource_index/parent_prefix_path/px4_ros_com
+[8.985s] -- Installing: /home/akshay/drone_ws/install/px4_ros_com/share/px4_ros_com/environment/ament_prefix_path.sh
+[8.986s] -- Installing: /home/akshay/drone_ws/install/px4_ros_com/share/px4_ros_com/environment/ament_prefix_path.dsv
+[8.986s] -- Installing: /home/akshay/drone_ws/install/px4_ros_com/share/px4_ros_com/environment/path.sh
+[8.986s] -- Installing: /home/akshay/drone_ws/install/px4_ros_com/share/px4_ros_com/environment/path.dsv
+[8.986s] -- Up-to-date: /home/akshay/drone_ws/install/px4_ros_com/share/px4_ros_com/local_setup.bash
+[8.986s] -- Up-to-date: /home/akshay/drone_ws/install/px4_ros_com/share/px4_ros_com/local_setup.sh
+[8.986s] -- Up-to-date: /home/akshay/drone_ws/install/px4_ros_com/share/px4_ros_com/local_setup.zsh
+[8.986s] -- Installing: /home/akshay/drone_ws/install/px4_ros_com/share/px4_ros_com/local_setup.dsv
+[8.986s] -- Installing: /home/akshay/drone_ws/install/px4_ros_com/share/px4_ros_com/package.dsv
+[8.987s] -- Up-to-date: /home/akshay/drone_ws/install/px4_ros_com/share/ament_index/resource_index/packages/px4_ros_com
+[8.987s] -- Up-to-date: /home/akshay/drone_ws/install/px4_ros_com/share/px4_ros_com/cmake/export_frame_transformsExport.cmake
+[8.987s] -- Up-to-date: /home/akshay/drone_ws/install/px4_ros_com/share/px4_ros_com/cmake/export_frame_transformsExport-noconfig.cmake
+[8.987s] -- Up-to-date: /home/akshay/drone_ws/install/px4_ros_com/share/px4_ros_com/cmake/ament_cmake_export_dependencies-extras.cmake
+[8.987s] -- Up-to-date: /home/akshay/drone_ws/install/px4_ros_com/share/px4_ros_com/cmake/ament_cmake_export_targets-extras.cmake
+[8.987s] -- Up-to-date: /home/akshay/drone_ws/install/px4_ros_com/share/px4_ros_com/cmake/ament_cmake_export_include_directories-extras.cmake
+[8.987s] -- Up-to-date: /home/akshay/drone_ws/install/px4_ros_com/share/px4_ros_com/cmake/ament_cmake_export_libraries-extras.cmake
+[8.987s] -- Up-to-date: /home/akshay/drone_ws/install/px4_ros_com/share/px4_ros_com/cmake/px4_ros_comConfig.cmake
+[8.987s] -- Up-to-date: /home/akshay/drone_ws/install/px4_ros_com/share/px4_ros_com/cmake/px4_ros_comConfig-version.cmake
+[8.987s] -- Up-to-date: /home/akshay/drone_ws/install/px4_ros_com/share/px4_ros_com/package.xml
+[8.989s] Invoked command in '/home/akshay/drone_ws/build/px4_ros_com' returned '0': CMAKE_PREFIX_PATH=/home/akshay/drone_ws/install/px4_msgs:/home/akshay/drone_ws/install/px4_ros_com:/opt/ros/humble LD_LIBRARY_PATH=/home/akshay/drone_ws/install/px4_msgs/lib:/home/akshay/drone_ws/install/px4_ros_com/lib:/usr/local/cuda-12.8/lib64:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib /usr/bin/cmake --install /home/akshay/drone_ws/build/px4_ros_com
