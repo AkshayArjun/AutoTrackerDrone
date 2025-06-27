@@ -80,7 +80,8 @@ Reference Trajectory
 ## ✅ Project Status
 
 - [x] FBL controller implemented and tested
-- [x] LPV-MPC controller (pending)
+- [x] LPV-MPC controller
+- [ ] Control Architecture test with PX4 (pending)
 - [ ] Path planning using FOAM (pending)
 - [ ] Vision module integration (pending)
 - [ ] LiDAR sensor interface (pending)
