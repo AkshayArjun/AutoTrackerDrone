@@ -3,6 +3,7 @@ import numpy as np
 class TrajectoryGenerator:
     def __init__(self):
         self.t = 0.0
+        self.dt = 0.4
 
     def update(self, dt):
         self.t += dt
@@ -15,7 +16,4 @@ class TrajectoryGenerator:
         ddx = -1.0 * np.cos(self.t)
         ddy = -1.0 * np.sin(self.t)
         ddz = 0.0
-        return [x, y, z], [dx, dy, dz], [ddx, ddy, ddz]
-
-
-   
+        return np.array([[x, y, z], [dx, dy, dz], [ddx, ddy, ddz]])

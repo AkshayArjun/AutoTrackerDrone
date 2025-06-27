@@ -20,29 +20,28 @@ class MPCController:
         '''Initialize MPC parameters and state variables'''
         self.dt = 0.1  # Time step for control updates
         self.horizon = 4  # Prediction horizon
-        self.state_dim = 6  # State dimension (phi, phi_dot, theta, theta_dot, psi, psi_dot)^T
+        self.state_dim = 9  # State dimension (phi, phi_dot, theta, theta_dot, psi, psi_dot, u2 , u3, u4)^T
         self.control_dim = 3  # Control dimension (u2 , u3, u4)^T
 
         '''Initialize state and control variables'''
         self.Ad_global = [np.zeros((6, 6)) for _ in range(self.horizon)]
         self.Bd_global = [np.zeros((6, 3)) for _ in range(self.horizon)]
         self.state_global = [np.zeros((6, 1)) for _ in range(self.horizon)]
-        self.U_g_kminus1 = [np.zeros((3, 1)) for _ in range(self.horizon)]
         self.Cd = np.array([[1, 0, 0, 0, 0, 0, 0 , 0, 0],
                             [0, 0, 1, 0, 0, 0, 0, 0, 0],
                             [0, 0, 0, 0, 1, 0, 0, 0, 0]])
         
         '''input all the moment of inertia here'''
-        self.Jtp = 0 #moment of inertia of the rotor
-        self.Ixx = 0 #moment of inertia about x axis 
-        self.Iyy = 0 #moment of inertia about y axis 
-        self.Izz = 0 #momnt of inertia about z axis
+        self.Jtp = 2.65e-5  #moment of inertia of the rotor
+        self.Ixx = 0.02  #moment of inertia about x axis 
+        self.Iyy = 0.02  #moment of inertia about y axis 
+        self.Izz = 0.04  #momnt of inertia about z axis
 
         '''the cost function matrices'''
-        self.S = np.array([[0, 0 ,0],
+        self.S = np.array([[1, 0 ,0],
                            [0, 1, 0],
                            [0, 0, 1]])
-        self.Q = np.array([[0, 0 ,0],
+        self.Q = np.array([[1, 0 ,0],
                            [0, 1, 0],
                            [0, 0, 1]])
         self.R = np.array([[1, 0, 0],
@@ -156,22 +155,4 @@ class MPCController:
         U_stack = np.vstack(self.U_g_kminus1)  # shape (12, 1)
         U_g_next = del_ug_global + U_stack
 
-        return U_g_next[0] , U_g_next # 3x1 matrix for the next control input, and the 12x1 matrix for the next control input
-        
-
-
-
-
-        
-
-
-            
-
-
-
-            
-            
-        
-
-
-
+        return U_g_next[0] , U_g_next # 3x1 matrix for the next control input, and the 12x1 matrix for the next control input and the previous control inputs
