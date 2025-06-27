@@ -28,12 +28,27 @@ class MPCController:
         self.Bd_global = [np.zeros((6, 3)) for _ in range(self.horizon)]
         self.state_global = [np.zeros((6, 1)) for _ in range(self.horizon)]
         self.U_g_kminus1 = [np.zeros((3, 1)) for _ in range(self.horizon)]
-
+        self.Cd = np.array([[1, 0, 0, 0, 0, 0, 0 , 0, 0],
+                            [0, 0, 1, 0, 0, 0, 0, 0, 0],
+                            [0, 0, 0, 0, 1, 0, 0, 0, 0]])
+        
         '''input all the moment of inertia here'''
         self.Jtp = 0 #moment of inertia of the rotor
         self.Ixx = 0 #moment of inertia about x axis 
         self.Iyy = 0 #moment of inertia about y axis 
         self.Izz = 0 #momnt of inertia about z axis
+
+        '''the cost function matrices'''
+        self.S = np.array([[0, 0 ,0],
+                           [0, 1, 0],
+                           [0, 0, 1]])
+        self.Q = np.array([[0, 0 ,0],
+                           [0, 1, 0],
+                           [0, 0, 1]])
+        self.R = np.array([[1, 0, 0],
+                            [0, 1, 0],
+                            [0, 0, 1]])
+
 
     def lpv(self, o_net, theta_dot, phi_dot):
         
@@ -69,6 +84,16 @@ class MPCController:
     def state_succession(self, A, B, U_i ,X_prev):
         X_next = A @ X_prev + B @ U_i
         return X_next
+    
+    def dis_to_til(self, ad_global, bd_global):
+        ad_till_global = [np.zeros(9, 9) for _ in range(self.horizon-1)]
+        bd_till_global = [np.zeros((9, 3)) for _ in range(self.horizon-1)]
+        for i in range(0, self.horizon-1):
+            ad_till_global[i] = np.block([[ad_global[i], bd_global[i]], [np.zeros((3, 6)), np.eye(3)]])
+            bd_till_global[i] = np.block([[bd_global[i]], [np.eye(3)]])
+        
+        return ad_till_global, bd_till_global
+        
 
     def mpc_controller(self, U_g_kminus1, x_k, r_g):
 
@@ -95,8 +120,51 @@ class MPCController:
         '''now to calculate the matrices for the cost function, Ad_til, Bd_til
         Cd'''
 
+        Adt, Bdt = self.dis_to_til(self.Ad_global, self.Bd_global) # 3x9 matrix for Adt and 3x3 matrix for Bdt
 
+        Cdt = np.block([self.Cd , np.zeros((3, 3))]) # 3x9 matrix
+
+        cDdash = np.block([[Bdt , np.zeros((9,3)) , np.zeros((9,3)), np.zeros((9,3))], 
+                           [Adt[0]@Bdt, Bdt, np.zeros((9,3)), np.zeros((9,3))],
+                           [Adt[1]@Adt[0]@Bdt, Adt[1]@Bdt, Bdt, np.zeros((9,3))],
+                           [Adt[2]@Adt[1]@Adt[0]@Bdt, Adt[2]@Adt[1]@Bdt, Adt[2]@Bdt, Bdt]]) # 36x12 matrix
         
+        aDhat = np.block([[Adt[0]],
+                           [Adt[1]@Adt[0]],
+                           [Adt[2]@Adt[1]@Adt[0]]
+                           [Adt[3]@Adt[2]@Adt[1]@Adt[0]]])  # 36x9 matrix
+        
+        qDdash = np.block([[Cdt.T@self.Q@Cdt, np.zeros((9,9)), np.zeros((9,9)), np.zeros((9,9))],
+                          [np.zeros((9,9)), Cdt.T@self.Q@Cdt, np.zeros((9,9)), np.zeros((9,9))],
+                          [np.zeros((9,9)), np.zeros((9,9)), Cdt.T@self.Q@Cdt, np.zeros((9,9))],
+                          [np.zeros((9,9)), np.zeros((9,9)), np.zeros((9,9)), Cdt.T@self.S@Cdt]])  #36x36 matrix 
+        
+        rDdash = np.block([[self.R, np.zeros((3,3)), np.zeros((3,3)), np.zeros((3,3))],
+                          [np.zeros((3,3)),self.R, np.zeros((3,3)), np.zeros((3,3))],
+                          [np.zeros((3,3)), np.zeros((3,3)), self.R, np.zeros((3,3))],
+                          [np.zeros((3,3)), np.zeros((3,3)), np.zeros((3,3)), self.R]])   # 12x12 matrix 
+                          
+        tDdash = np.block([[self.Q@Cdt, np.zeros((3,9)), np.zeros((3,9)), np.zeros((3,9))],
+                          [np.zeros((3,9)), self.Q@Cdt, np.zeros((3,9)), np.zeros((3,9))],
+                          [np.zeros((3,9)), np.zeros((3,9)), self.Q@Cdt, np.zeros((3,9))],
+                          [np.zeros((3,9)), np.zeros((3,9)), np.zeros((3,9)), self.S@Cdt]]) # 12x36 matrix
+        
+        hDhat = cDdash.T@ qDdash @ cDdash + rDdash #12x12 matrix
+        fDhatTranspose = np.block([[aDhat.T@qDdash@cDdash],
+                          [-tDdash@cDdash]])  # 12x1 matrix
+        
+        del_ug_global = np.linalg.inv(hDhat) @ fDhatTranspose.T @ np.array([[x_k.T], 
+                                                                            [r_g.T]])   # 12x1 matrix
+        
+        U_g_next = del_ug_global + self.U_g_kminus1
+
+
+        return U_g_next[0] , U_g_next # 3x1 matrix for the next control input, and the 12x1 matrix for the next control input
+        
+
+
+
+
         
 
 
