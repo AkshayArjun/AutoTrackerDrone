@@ -54,10 +54,6 @@ class MPCController:
         
         ''' here we use the prev state values to define the parameters at every timestep'''
 
-        o_net = o_net #this is the net angular velocity of the rotor causing the gyro effect (o1 - o2 + o3 - o4
-        theta_dot = theta_dot
-        phi_dot = phi_dot
-
         A = np.array([
             [0, 1, 0, 0, 0, 0],
             [0, 0, 0, -self.Jtp*o_net/self.Ixx, 0, (self.Iyy - self.Izz)*theta_dot/self.Ixx],
@@ -95,17 +91,18 @@ class MPCController:
         return ad_till_global, bd_till_global
         
 
-    def mpc_controller(self, U_g_kminus1, x_k, r_g):
+    def mpc_controller(self, U_g_kminus1, x_k, r_g, o):
 
         self.U_g_kminus1 = U_g_kminus1
         self.state_global[0] = x_k
 
         #function to give us the Ad, Bd matrices throughout the horizon
 
-        for i in range(0,self.horizon-2):
+        for i in range(0,self.horizon-1):
             phi_dot = self.state_global[i][1,0]
             theta_dot = self.state_global[i][3,0]
-            o_net = 0
+            o_net = o[1] - o[2] + o[3] - o[4] # Assuming o_net is zero for simplicity, can be replaced with actual value
+
 
             Ad, Bd = self.lpv(phi_dot, theta_dot, o_net)
 
@@ -131,7 +128,7 @@ class MPCController:
         
         aDhat = np.block([[Adt[0]],
                            [Adt[1]@Adt[0]],
-                           [Adt[2]@Adt[1]@Adt[0]]
+                           [Adt[2]@Adt[1]@Adt[0]],
                            [Adt[3]@Adt[2]@Adt[1]@Adt[0]]])  # 36x9 matrix
         
         qDdash = np.block([[Cdt.T@self.Q@Cdt, np.zeros((9,9)), np.zeros((9,9)), np.zeros((9,9))],
@@ -153,11 +150,11 @@ class MPCController:
         fDhatTranspose = np.block([[aDhat.T@qDdash@cDdash],
                           [-tDdash@cDdash]])  # 12x1 matrix
         
-        del_ug_global = np.linalg.inv(hDhat) @ fDhatTranspose.T @ np.array([[x_k.T], 
-                                                                            [r_g.T]])   # 12x1 matrix
+        del_ug_global = np.linalg.solve(hDhat, fDhatTranspose.T @ np.array([[x_k], 
+                                                                            [r_g]]) )  # 12x1 matrix
         
-        U_g_next = del_ug_global + self.U_g_kminus1
-
+        U_stack = np.vstack(self.U_g_kminus1)  # shape (12, 1)
+        U_g_next = del_ug_global + U_stack
 
         return U_g_next[0] , U_g_next # 3x1 matrix for the next control input, and the 12x1 matrix for the next control input
         
