@@ -1,6 +1,6 @@
 import rclpy
 from rclpy.qos import QoSProfile, ReliabilityPolicy, HistoryPolicy, DurabilityPolicy
-from px4_msgs.msg import VehicleOdometry
+from px4_msgs.msg import VehicleOdometry , ActuatorOutputs
 import numpy as np
 
 class SensorInterface:
@@ -11,24 +11,36 @@ class SensorInterface:
             history=HistoryPolicy.KEEP_LAST,
             depth=1
         )
+        self.omega_max = 942.478 # Maximum angular velocity in rad/s
         self.node = node
         self.odometry = None
         node.create_subscription(VehicleOdometry, '/fmu/out/vehicle_odometry', self.odom_cb, qos)
 
         #create interface to recieve actuator commands
         self.actuator_commands = None
-        node.create_subscription(VehicleOdometry, '/fmu/out/vehicle_actuator_commands', self.actuator_cb, qos)
+        self.actuator_velocity = None
+        node.create_subscription(ActuatorOutputs, '/fmu/out/actuator_outputs', self.actuator_cb, qos)
     
     def actuator_cb(self, msg):
-        self.actuator_commands = msg
+        u = np.clip(msg.output[:4], 0.0, 1.0)
+        self.actuator_commands = np.array([u[0], u[1], u[2], u[3]])
+
+   
+    def get_rotorvel_commands(self):
+        actuator = self.actuator_commands  # optional safety
+        self.actuator_velocity = np.sqrt(actuator) * self.omega_max
+        return self.actuator_velocity
     
-    def get_actuator_commands(self):
-        return self.actuator_commands
+    def calc_o_net(self):
+        av = self.get_rotorvel_commands()
+        o_net = av[0] - av[1] + av[2] -av[3]
+        return o_net
+
     
     def odom_cb(self, msg):
         self.odometry = msg
 
-    def quaternion_to_euler(qx, qy, qz, qw):
+    def quaternion_to_euler(self, qx, qy, qz, qw):
         """
         Converts quaternion (qx, qy, qz, qw) to Euler angles (roll φ, pitch θ, yaw ψ).
         Returns angles in radians.

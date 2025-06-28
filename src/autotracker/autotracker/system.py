@@ -2,7 +2,7 @@ import rclpy
 from rclpy.node import Node
 
 
-from px4_msgs.msg import VehicleOdometry, VehicleLocalPosition
+from px4_msgs.msg import ActuatorMotors
 from px4_msgs.msg import VehicleStatus
 from rclpy.qos import QoSProfile, ReliabilityPolicy, HistoryPolicy, DurabilityPolicy
 
@@ -15,6 +15,11 @@ import numpy as np
 class MainController(Node):
     def __init__(self):
         super().__init__('main_controller')
+        qos_profile = QoSProfile(
+            reliability=ReliabilityPolicy.BEST_EFFORT,
+            durability=DurabilityPolicy.TRANSIENT_LOCAL,
+            history=HistoryPolicy.KEEP_LAST,
+            depth=1)
 
         self.sensor = SensorInterface(self)
         self.trajectory = TrajectoryGenerator()
@@ -28,9 +33,9 @@ class MainController(Node):
 
         ''' aero constants '''
         self.drag_switch = 0  # 1 for drag, 0 for no drag
-        cT = 1.79e-5  # Thrust coefficient [N·s^2]
-        cQ = 1.66e-7  # Torque/drage coefficient [N·m·s^2]
-        l = 0.171 
+        self.cT = 1.79e-5  # Thrust coefficient [N·s^2]
+        self.cQ = 1.66e-7  # Torque/drage coefficient [N·m·s^2]
+       
 
         '''mpc parameters'''
         self.Ixx = self.mpc.Ixx
@@ -39,7 +44,10 @@ class MainController(Node):
         self.Jtp = self.mpc.Jtp  # Moment of inertia of the rotor
         self.U_g_kminus1 = np.zeros((self.horizon*3, 1))
 
-    import numpy as np
+        ''' system output '''
+        self.U = np.zeros((4, 1))
+        self.actuator_publisher = self.create_publisher(
+            ActuatorMotors, '/fmu/in/actuator_motor', qos_profile)
 
 
     def body_to_world(self,  p, q, r , qx, qy, qz, qw):
@@ -81,9 +89,15 @@ class MainController(Node):
 
         ''' MPC Control Loop '''
         for i in range(self.horizon):
-            o = 0
+            o = self.sensor.calc_o_net()
             x_k = self.sensor.get_euler()
-            self.mpc.mpc_controller(self.U_g_kminus1, x_k, r_g, o)
+            U_g, U_g_next = self.mpc.mpc_controller(self.U_g_kminus1, x_k, r_g, o)
+            self.U_g_kminus1 = U_g_next
+
+            U = [U1, U_g[0, 0], U_g[1, 0], U_g[2, 0]]
+            cd = self.cd 
+            self.actuator_publisher.publish(
+                ActuatorMotors(controls=U, timestamp=int(self.get_clock().now().nanoseconds / 1000)))
         # Update the control inputs
         for i in range(self.horizon):
             self.U[i*3:(i+1)*3] = np.array([self.fbl.X, self.fbl.Y, self.fbl.Z])
