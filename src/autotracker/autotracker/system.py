@@ -1,7 +1,7 @@
 import rclpy
 from rclpy.node import Node
 
-from px4_msgs.msg import ActuatorMotors
+
 from px4_msgs.msg import VehicleOdometry, VehicleLocalPosition
 from px4_msgs.msg import VehicleStatus
 from rclpy.qos import QoSProfile, ReliabilityPolicy, HistoryPolicy, DurabilityPolicy
@@ -50,7 +50,7 @@ class MainController(Node):
         return T @ np.array([[p], [q], [r]])
 
     def system_loop(self):
-    ''' Initialise the system''' 
+        ''' Initialise the system''' 
 
         odom = self.sensor.get_state()
         if odom is None:
@@ -68,30 +68,37 @@ class MainController(Node):
 
         self.get_logger().info(f"Position: {pos_sys}, Velocity: {vel_sys}, Reference Position: {pos_ref}, Reference Velocity: {vel_ref}")
 
-    ''' FBL Control Loop '''
+        ''' FBL Control Loop '''
 
         output = self.fbl.fbl_control(pos_ref, vel_ref, pos_sys, vel_sys, acc_ref, psi_ref)
         self.get_logger().info(f"Control Output, U1, phir, thetar: {output}")
 
         U1 = output[0]  # Thrust
-        phir = output[1]  # Roll angle
-        thetar = output[2]  # Pitch angle
-        r_single = np.array([[phir], [thetar], [psir]])  # Reference angles
+        phi_ref = output[1]  # Roll angle
+        theta_ref = output[2]  # Pitch angle
+        r_single = np.array([[phi_ref], [theta_ref], [psi_ref]])  # Reference angles
         r_g = np.tile(r_single, (4, 1))  # Reference trajectory for MPC
 
         ''' MPC Control Loop '''
         for i in range(self.horizon):
-            o = 
+            o = 0
             x_k = self.sensor.get_euler()
-            self.mpc.mpc_controller(U_g_kminus1, x_k, r_g, o)
+            self.mpc.mpc_controller(self.U_g_kminus1, x_k, r_g, o)
         # Update the control inputs
         for i in range(self.horizon):
             self.U[i*3:(i+1)*3] = np.array([self.fbl.X, self.fbl.Y, self.fbl.Z])
 
+def main(args=None) -> None:
+    print('Starting offboard control node...')
+    rclpy.init(args=args)
+    system_control = MainController()
+    rclpy.spin(system_control)
+    system_control.destroy_node()
+    rclpy.shutdown()
 
 
-
-
-
-if __name__ == "__main__":
-    main()
+if __name__ == '__main__':
+    try:
+        main()
+    except Exception as e:
+        print(e)

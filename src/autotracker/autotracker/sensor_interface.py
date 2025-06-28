@@ -1,6 +1,7 @@
 import rclpy
 from rclpy.qos import QoSProfile, ReliabilityPolicy, HistoryPolicy, DurabilityPolicy
 from px4_msgs.msg import VehicleOdometry
+import numpy as np
 
 class SensorInterface:
     def __init__(self, node):
@@ -14,6 +15,16 @@ class SensorInterface:
         self.odometry = None
         node.create_subscription(VehicleOdometry, '/fmu/out/vehicle_odometry', self.odom_cb, qos)
 
+        #create interface to recieve actuator commands
+        self.actuator_commands = None
+        node.create_subscription(VehicleOdometry, '/fmu/out/vehicle_actuator_commands', self.actuator_cb, qos)
+    
+    def actuator_cb(self, msg):
+        self.actuator_commands = msg
+    
+    def get_actuator_commands(self):
+        return self.actuator_commands
+    
     def odom_cb(self, msg):
         self.odometry = msg
 
@@ -40,7 +51,7 @@ class SensorInterface:
         cosy_cosp = 1 - 2 * (qy ** 2 + qz ** 2)
         yaw = np.arctan2(siny_cosp, cosy_cosp)
 
-    return np.array([[roll], [pitch], [yaw]])  # φ, θ, ψ  
+        return np.array([[roll], [pitch], [yaw]])  # φ, θ, ψ  
 
     def get_state(self):
         return self.odometry
@@ -50,17 +61,17 @@ class SensorInterface:
 
     def get_euler(self):
         qx, qy, qz, qw = self.odometry.q
-        return quaternion_to_euler(qx, qy, qz, qw)
+        return self.quaternion_to_euler(qx, qy, qz, qw)
     
     def get_position(self):
         return np.array([self.odometry.position[0], 
                          self.odometry.position[1], 
                          self.odometry.position[2]])
     def get_velocity(self):
-        return np.array([self.odometry.velocity[0], 
-                         self.odometry.velocity[1] 
-                         self.odometry.velocity[2]])
+        return np.array([[self.odometry.velocity[0], 
+                         self.odometry.velocity[1],
+                         self.odometry.velocity[2]]])
     def get_angular_velocity(self):
         return np.array([self.odometry.angular_velocity[0], 
                          self.odometry.angular_velocity[1], 
-                         self.odometry.angular_velocity[2]])S
+                         self.odometry.angular_velocity[2]])
